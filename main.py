@@ -1,1 +1,4 @@
-print("Create Main")
+import telebot
+
+bot = telebot.TeleBot
+
