@@ -13,9 +13,9 @@ bot = telebot.TeleBot('5504467462:AAFM21r5kFEX9PmVhg8j308cvDYykknm1hU')
 def start(message):
 
     buttons = [
-        'Информация о ЕГЭ', 'Расписание ЕГЭ', 'Минимальные баллы',
-        'Баллы для поступления', 'Баллы за прошлый год', 'Где можно посмотреть результаты',
-        'Перевод первичных баллов'
+        ('Информация о ЕГЭ', '01'), ('Расписание ЕГЭ', '02'), ('Минимальные баллы', '03'),
+        ('Баллы для поступления', '04'), ('Баллы за прошлый год', '05'), ('Где можно посмотреть результаты', '06'),
+        ('Перевод первичных баллов', '07')
     ]
 
     markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1)
@@ -25,4 +25,20 @@ def start(message):
                      '\nНиже представлен список доступной информации, нажимая на кнопки вы будете получать информацию нужную вам',
                      reply_markup=markup)
 
+@bot.callback_query_handler(func=lambda call: True)
+def callback_inline(call):
+    if call.data == '01':
+        print('1')
+    elif call.data == '02':
+        print('2')
+    elif call.data == '03':
+        print('3')
+    elif call.data == '04':
+        print('4')
+    elif call.data == '05':
+        print('5')
+    elif call.data == '06':
+        print('6')
+    elif call.data == '07':
+        print('7')
 bot.polling(none_stop=True)
