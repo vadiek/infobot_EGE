@@ -2,9 +2,64 @@ from unittest.mock import call
 
 import telebot
 from keyboa.keyboards import keyboa_maker
-
 from libs.telebot import types
 from keyboa import Keyboa
+
+def info(id):
+    buttons = [
+        ('Продолжительность', '101'), ('Что можно брать с собой?', '102'), ('Список обязательных предметов', '103'),
+        ('<== Назад', '104')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1)
+    bot.send_message(id, 'Информация о ЕГЭ', reply_markup=markup)
+
+def dates(id):
+    buttons = [
+        ('Продолжительность', '101'), ('Что можно брать с собой?', '102'), ('Список обязательных предметов', '103'),
+        ('<== Назад', '104')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1)
+    bot.send_message(id, 'Информация о ЕГЭ', reply_markup=markup)
+
+def min_bal(id):
+    buttons = [
+        ('Продолжительность', '101'), ('Что можно брать с собой?', '102'), ('Список обязательных предметов', '103'),
+        ('<== Назад', '104')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1)
+    bot.send_message(id, 'Информация о ЕГЭ', reply_markup=markup)
+
+def bal_g(id):
+    buttons = [
+        ('Продолжительность', '101'), ('Что можно брать с собой?', '102'), ('Список обязательных предметов', '103'),
+        ('<== Назад', '104')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1)
+    bot.send_message(id, 'Информация о ЕГЭ', reply_markup=markup)
+
+def last_bal(id):
+    buttons = [
+        ('Продолжительность', '101'), ('Что можно брать с собой?', '102'), ('Список обязательных предметов', '103'),
+        ('<== Назад', '104')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1)
+    bot.send_message(id, 'Информация о ЕГЭ', reply_markup=markup)
+
+def result(id):
+    buttons = [
+        ('Продолжительность', '101'), ('Что можно брать с собой?', '102'), ('Список обязательных предметов', '103'),
+        ('<== Назад', '104')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1)
+    bot.send_message(id, 'Информация о ЕГЭ', reply_markup=markup)
+
+def refactor_bal(id):
+    buttons = [
+        ('Продолжительность', '101'), ('Что можно брать с собой?', '102'), ('Список обязательных предметов', '103'),
+        ('<== Назад', '104')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1)
+    bot.send_message(id, 'Информация о ЕГЭ', reply_markup=markup)
 
 bot = telebot.TeleBot('5504467462:AAFM21r5kFEX9PmVhg8j308cvDYykknm1hU')
 
@@ -19,6 +74,7 @@ def start(message):
     ]
 
     markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1)
+    print(message.chat.id)
 
     bot.send_message(message.chat.id,
                      'Привет, пользователь, данный бот создан для информирования пользователей о различных аспектах ЕГЭ \n'
@@ -27,8 +83,9 @@ def start(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
+    print(call)
     if call.data == '01':
-        print('1')
+        info(call.from_user.id)
     elif call.data == '02':
         print('2')
     elif call.data == '03':
