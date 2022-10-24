@@ -11,30 +11,68 @@ def clean(ch_id, message_id, bot_t):
     print('ok')
 
 
+# -----------------------------------------------------------------------------------------------------------------------
+
 def info(id, mes_id, ch_id):
     buttons = [
         ('Продолжительность', '101'), ('Что можно брать с собой?', '102'), ('Список обязательных предметов', '103'),
         ('<== Назад', '104')
     ]
-    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1, front_marker=str(mes_id)+'/'+ str(ch_id) + '/')
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
     bot.send_message(id, 'Информация о ЕГЭ', reply_markup=markup)
 
+
+def latest(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '114')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'продолжительность', reply_markup=markup)
+
+
+def items(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '114')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'Даты егэ', reply_markup=markup)
+
+
+def important(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '114')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'Даты егэ', reply_markup=markup)
+
+
+# -----------------------------------------------------------------------------------------------------------------------
 
 def dates(id, mes_id, ch_id):
     buttons = [
         ('<== Назад', '704')
     ]
-    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1, front_marker=str(mes_id)+'/'+ str(ch_id) + '/')
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
     bot.send_message(id, 'Даты егэ', reply_markup=markup)
 
+
+# -----------------------------------------------------------------------------------------------------------------------
 
 def min_bal(id, mes_id, ch_id):
     buttons = [
         ('<== Назад', '604')
     ]
-    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1, front_marker=str(mes_id)+'/'+ str(ch_id) + '/')
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
     bot.send_message(id, 'Минимальные баллы', reply_markup=markup)
 
+
+# -----------------------------------------------------------------------------------------------------------------------
 
 def bal_g(id, mes_id, ch_id):
     buttons = [
@@ -42,35 +80,113 @@ def bal_g(id, mes_id, ch_id):
         ('Минимальные баллы для поступления', '203'),
         ('<== Назад', '204')
     ]
-    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1, front_marker=str(mes_id)+'/'+ str(ch_id) + '/')
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
     bot.send_message(id, "Баллы для поступления", reply_markup=markup)
 
 
+def mid_b(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '214')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'Даты егэ', reply_markup=markup)
+
+
+def pop_b(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '214')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'Даты егэ', reply_markup=markup)
+
+
+def min_b_g(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '214')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'Даты егэ', reply_markup=markup)
+
+
+# -----------------------------------------------------------------------------------------------------------------------
 def last_bal(id, mes_id, ch_id):
     buttons = [
         ('Средние баллы во всей старне 2022', '301'), ('Средние баллы в регионе 2022', '302'),
         ('Количество стобальников', '303'),
         ('<== Назад', '304')
     ]
-    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1, front_marker=str(mes_id)+'/'+ str(ch_id) + '/')
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
     bot.send_message(id, 'Баллы за прошлый год', reply_markup=markup)
 
 
+def s_country(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '314')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'Даты егэ', reply_markup=markup)
+
+
+def s_region(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '314')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'Даты егэ', reply_markup=markup)
+
+
+def count_100(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '314')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'Даты егэ', reply_markup=markup)
+
+
+# -----------------------------------------------------------------------------------------------------------------------
 def result(id, mes_id, ch_id):
     buttons = [
         ('<== Назад', '504')
     ]
-    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1, front_marker=str(mes_id)+'/'+ str(ch_id) + '/')
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
     bot.send_message(id, 'РЦОИ', reply_markup=markup)
 
+# -----------------------------------------------------------------------------------------------------------------------
 def refactor_bal(id, mes_id, ch_id):
     buttons = [
         ('Схема переводов', '401'), ('Критерии оценки', '402'),
         ('<== Назад', '404')
     ]
-    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1, front_marker=str(mes_id)+'/'+ str(ch_id) + '/')
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
     bot.send_message(id, 'Информация о ЕГЭ', reply_markup=markup)
 
+def re_b(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '414')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'Даты егэ', reply_markup=markup)
+
+def manual_b(id, mes_id, ch_id):
+    buttons = [
+        ('<== Назад', '414')
+    ]
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
+    bot.send_message(id, 'Даты егэ', reply_markup=markup)
+
+# -----------------------------------------------------------------------------------------------------------------------
 def start1(id, mes_id, ch_id):
     buttons = [
         ('Информация о ЕГЭ', '01'), ('Расписание ЕГЭ', '02'), ('Минимальные баллы', '03'),
@@ -78,7 +194,8 @@ def start1(id, mes_id, ch_id):
         ('Перевод первичных баллов', '07')
     ]
 
-    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1, front_marker=str(mes_id)+'/'+ str(ch_id) + '/')
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(mes_id) + '/' + str(ch_id) + '/')
 
     bot.send_message(id,
                      'Привет, пользователь, данный бот создан для информирования пользователей о различных аспектах ЕГЭ \n'
@@ -97,7 +214,8 @@ def start(message):
         ('Перевод первичных баллов', '07')
     ]
 
-    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1, front_marker=str(message.id)+'/'+ str(message.chat.id) + '/')
+    markup = keyboa_maker(items=buttons, copy_text_to_callback=True, items_in_row=1,
+                          front_marker=str(message.id) + '/' + str(message.chat.id) + '/')
     print(message.id)
 
     bot.send_message(message.chat.id,
@@ -115,21 +233,49 @@ def callback_inline(call):
     list = str.split('/')
     mes_id = int(list[0]) + 1
     ch_id = int(list[1])
-    if list[2] == '01':
+    if list[2] == '01' or list[2] == '114':
         info(call.from_user.id, mes_id, ch_id)
     elif list[2] == '02':
         dates(call.from_user.id, mes_id, ch_id)
     elif list[2] == '03':
         min_bal(call.from_user.id, mes_id, ch_id)
-    elif list[2] == '04':
+    elif list[2] == '04' or list[2] == '214':
         bal_g(call.from_user.id, mes_id, ch_id)
-    elif list[2] == '05':
+    elif list[2] == '05' or list[2] == '314':
         last_bal(call.from_user.id, mes_id, ch_id)
     elif list[2] == '06':
         result(call.from_user.id, mes_id, ch_id)
-    elif list[2] == '07':
+    elif list[2] == '07' or list[2] == '414':
         refactor_bal(call.from_user.id, mes_id, ch_id)
-    elif list[2] == '104' or list[2] == '204' or list[2] == '304' or list[2] == '404' or list[2] == '504' or list[2] == '604' or list[2] == '704':
+    # -----------------------------------------------------------------------------------------------------------------------
+    elif list[2] == '101':
+        latest(call.from_user.id, mes_id, ch_id)
+    elif list[2] == '102':
+        items(call.from_user.id, mes_id, ch_id)
+    elif list[2] == '103':
+        important(call.from_user.id, mes_id, ch_id)
+    # -----------------------------------------------------------------------------------------------------------------------
+    elif list[2] == '201':
+        mid_b(call.from_user.id, mes_id, ch_id)
+    elif list[2] == '202':
+        pop_b(call.from_user.id, mes_id, ch_id)
+    elif list[2] == '203':
+        min_b_g(call.from_user.id, mes_id, ch_id)
+    # -----------------------------------------------------------------------------------------------------------------------
+    elif list[2] == '301':
+        s_country(call.from_user.id, mes_id, ch_id)
+    elif list[2] == '302':
+        s_region(call.from_user.id, mes_id, ch_id)
+    elif list[2] == '303':
+        count_100(call.from_user.id, mes_id, ch_id)
+    # -----------------------------------------------------------------------------------------------------------------------
+    elif list[2] == '401':
+        re_b(call.from_user.id, mes_id, ch_id)
+    elif list[2] == '402':
+        manual_b(call.from_user.id, mes_id, ch_id)
+
+    elif list[2] == '104' or list[2] == '204' or list[2] == '304' or list[2] == '404' or list[2] == '504' or list[
+        2] == '604' or list[2] == '704':
         start1(call.from_user.id, mes_id, ch_id)
     clean(ch_id, mes_id, bot)
 
